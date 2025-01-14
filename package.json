@@ -1,0 +1,41 @@
+{
+  "name": "PowerBank",
+  "version": "0.0.1",
+  "description": "videogame bank application",
+  "main": "index.js",
+  "author": "yumeneko228",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest dist/",
+    "watch": "tsc -w",
+    "dev": "nodemon --inspect dist/index.js"
+  },
+  "dependencies": {
+    "@types/express-validator": "^3.0.2",
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.3",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-validator": "^7.2.1",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.13.1"
+  },
+  "devDependencies": {
+    "@jest/globals": "^29.7.0",
+    "@trivago/prettier-plugin-sort-imports": "^5.2.1",
+    "@types/bcrypt": "^5.0.2",
+    "@types/express": "^5.0.0",
+    "@types/jest": "^29.5.14",
+    "@types/jsonwebtoken": "^9.0.7",
+    "@types/node": "^22.10.5",
+    "@types/pg": "^8.11.10",
+    "@types/supertest": "^6.0.2",
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.9",
+    "prettier": "^3.4.2",
+    "supertest": "^7.0.0",
+    "ts-jest": "^29.2.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2"
+  }
+}
