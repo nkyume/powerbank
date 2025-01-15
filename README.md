@@ -17,7 +17,7 @@ yarn start
 ```
 
 # Endpoints
-tags:  
+Navigation:  
 - [Auth](#auth).  
 - [Users](#auth).
 - [Balance](#auth).
