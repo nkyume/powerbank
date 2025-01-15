@@ -24,7 +24,7 @@ Navigation:
    
 I'm too silly to make swagger docs (>؂ •́)
 
-### Auth
+### Auth :policewoman:
 ### POST /api/v1/signup
 **create user account**  
 request body example:
@@ -54,7 +54,7 @@ response example:
   "token": 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6Im1hZG9rYSIsImlhdCI6MTUxNjIzOTAyMn0.JjCjhHC4sZBVpcFUUtT5PVHXQQtIv1AC-2J4Hb1kmjc'
 }
 ```
-### Users
+### Users :woman:
 ### GET /api/v1/users
 **Returns array of users**   
   
@@ -90,8 +90,8 @@ response example:
 }
 ```
 
-## Balances
-### GET /api/v1/balance  
+## Balances :moneybag:
+### GET /api/v1/balance  :lock:
 **Returns balance of logged-in user**  
 Auth: Bearer  
 response example:  
@@ -102,7 +102,7 @@ response example:
 }
 ```
 
-### GET /api/v1/balance/transaction  
+### GET /api/v1/balance/transaction  :lock:
 **Returns array of transactions of logged-in user**  
 Auth: Bearer  
    
@@ -131,7 +131,7 @@ response example:
 }
 ```
 
-### POST /api/v1/balance/deposit
+### POST /api/v1/balance/deposit :lock:
 **Transfer money from logged-in user's wallet to bank account**  
 Auth: Bearer  
 request body example:  
@@ -145,7 +145,7 @@ response example:
 204
 ```
 
-### POST /api/v1/balance/withdraw
+### POST /api/v1/balance/withdraw :lock:
 **Transfer money from logged-in user's bank account to wallet**  
 Auth: Bearer  
 request body example:  
@@ -159,7 +159,7 @@ response example:
 204
 ```
 
-### POST /api/v1/balance/transfer
+### POST /api/v1/balance/transfer :lock:
 **Transfer money from logged-in user's bank account to another user's bank account**  
 Auth: Bearer  
 request body example: 
@@ -173,7 +173,7 @@ response example:
 204
 ```
 
-### POST /api/v1/balance/bablo
+### POST /api/v1/balance/bablo :lock:
 **Button "Bablo"... If only i had it irl...**  
 Auth: Bearer  
 request body example: 
