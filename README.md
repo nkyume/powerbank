@@ -1,5 +1,5 @@
 # Power Bank
-Advanced Banking Super Operating System
+Advanced Banking Secure Operating System
   
 # How to run:
 
@@ -24,7 +24,7 @@ Navigation:
    
 I'm too silly to make swagger docs (>؂ •́)
 
-### Auth
+### Auth :policewoman:
 ### POST /api/v1/signup
 **create user account**  
 request body example:
@@ -54,7 +54,7 @@ response example:
   "token": 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6Im1hZG9rYSIsImlhdCI6MTUxNjIzOTAyMn0.JjCjhHC4sZBVpcFUUtT5PVHXQQtIv1AC-2J4Hb1kmjc'
 }
 ```
-### Users
+### Users :woman:
 ### GET /api/v1/users
 **Returns array of users**   
   
@@ -68,7 +68,7 @@ query params:
         
   - **page**: int   
       page number  
-      default value: 50  
+      default value: 1 
     
 response example:  
 ```
@@ -90,8 +90,8 @@ response example:
 }
 ```
 
-## Balances
-### GET /api/v1/balance  
+## Balances :moneybag:
+### :lock: GET /api/v1/balance  
 **Returns balance of logged-in user**  
 Auth: Bearer  
 response example:  
@@ -102,7 +102,7 @@ response example:
 }
 ```
 
-### GET /api/v1/balance/transaction  
+### :lock: GET /api/v1/balance/transaction
 **Returns array of transactions of logged-in user**  
 Auth: Bearer  
    
@@ -116,7 +116,7 @@ query params:
         
   - **page**: int   
       page number  
-      default value: 50
+      default value: 1
     
 response example:  
 ```
@@ -131,7 +131,7 @@ response example:
 }
 ```
 
-### POST /api/v1/balance/deposit
+### :lock: POST /api/v1/balance/deposit 
 **Transfer money from logged-in user's wallet to bank account**  
 Auth: Bearer  
 request body example:  
@@ -145,7 +145,7 @@ response example:
 204
 ```
 
-### POST /api/v1/balance/withdraw
+### :lock: POST /api/v1/balance/withdraw 
 **Transfer money from logged-in user's bank account to wallet**  
 Auth: Bearer  
 request body example:  
@@ -159,7 +159,7 @@ response example:
 204
 ```
 
-### POST /api/v1/balance/transfer
+### :lock: POST /api/v1/balance/transfer 
 **Transfer money from logged-in user's bank account to another user's bank account**  
 Auth: Bearer  
 request body example: 
@@ -173,7 +173,7 @@ response example:
 204
 ```
 
-### POST /api/v1/balance/bablo
+### :lock: POST /api/v1/balance/bablo 
 **Button "Bablo"... If only i had it irl...**  
 Auth: Bearer  
 request body example: 
