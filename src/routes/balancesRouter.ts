@@ -4,6 +4,8 @@ import { body, matchedData } from 'express-validator'
 import { amountValidation } from '../middleware/amountValidation'
 import { authMiddleware } from '../middleware/authMiddleware'
 import { inputValidationMiddleware } from '../middleware/inputValidationMiddleware'
+import { limitValidation } from '../middleware/limitValidation'
+import { pageValidation } from '../middleware/pageValidation'
 import { balanceViewModel } from '../models/balanceViewModel'
 import { transactionViewModel } from '../models/transactionViewModel'
 import {
@@ -31,12 +33,13 @@ balancesRouter.get(
 
 balancesRouter.get(
   '/transactions',
-  async (
-    req: Request<{}, {}, {}, { limit: number; page: number }>,
-    res: Response<transactionViewModel[]>
-  ) => {
-    const limit = +req.query.limit || 50
-    const page = +req.query.page || 1
+  limitValidation,
+  pageValidation,
+  inputValidationMiddleware,
+  async (req: Request, res: Response<transactionViewModel[]>) => {
+    const data = matchedData(req)
+    const limit = data.limit || 50
+    const page = data.page || 1
     const skip = limit * (page - 1)
     const username = res.locals.userDetails.username
     const transactions = await findTransacitons(username, limit, skip)
