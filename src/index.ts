@@ -1,12 +1,9 @@
-import { config } from 'dotenv'
-
 import { app } from './app'
 import { hello } from './helloMessage'
 import { db } from './repositories'
 import { SETTINGS } from './settings'
 
-config()
-//hello()
+hello()
 
 app.listen(SETTINGS.PORT, () => {
   console.log(`Server running on http://localhost:${SETTINGS.PORT}/.`)

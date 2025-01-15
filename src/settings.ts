@@ -1,3 +1,6 @@
+import { config } from 'dotenv'
+
+config()
 export const SETTINGS = {
   DB_URI:
     process.env.DB_URI ||
