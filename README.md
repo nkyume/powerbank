@@ -135,7 +135,9 @@ response example:
 Auth: Bearer  
 request body:  
 ```
-"amount": int
+{
+  "amount": int
+}
 ```
 response example:  
 ```
@@ -147,7 +149,9 @@ response example:
 Auth: Bearer  
 request body:  
 ```
-"amount": int
+{
+  "amount": int
+}
 ```
 response example:  
 ```
@@ -159,7 +163,9 @@ response example:
 Auth: Bearer  
 request body:  
 ```
-"amount": int
+{
+  "amount": int
+}
 ```
 response example:  
 ```
@@ -167,11 +173,13 @@ response example:
 ```
 
 ### POST /api/v1/balance/bablo
-**Knopka "Bablo"... What can it do?**  
+**Button "Bablo"... What can it do?**  
 Auth: Bearer  
 request body:  
 ```
-"amount": int
+{
+  "amount": int
+}
 ```
 response example:  
 ```
