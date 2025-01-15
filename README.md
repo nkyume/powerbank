@@ -173,7 +173,7 @@ response example:
 ```
 
 ### POST /api/v1/balance/bablo
-**Button "Bablo"... What can it do?**  
+**Button "Bablo"... If only i had it irl...**  
 Auth: Bearer  
 request body example: 
 ```
