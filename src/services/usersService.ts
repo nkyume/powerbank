@@ -1,4 +1,3 @@
-import { userFindModel } from '../models/userFindModel'
 import { userViewModel } from '../models/userViewModel'
 import { Users } from '../repositories/usersDAL'
 
