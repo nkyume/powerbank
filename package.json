@@ -9,6 +9,7 @@
     "test": "jest dist/",
     "watch": "tsc -w",
     "dev": "nodemon dist/index.js",
+    "compile": "tsc",
     "start": "node dist/index.js",
     "dbInit": "node dist/databaseInit.js"
   },
