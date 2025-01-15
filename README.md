@@ -68,7 +68,7 @@ query params:
         
   - **page**: int   
       page number  
-      default value: 50  
+      default value: 1 
     
 response example:  
 ```
@@ -116,7 +116,7 @@ query params:
         
   - **page**: int   
       page number  
-      default value: 50
+      default value: 1
     
 response example:  
 ```
