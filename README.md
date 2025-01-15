@@ -133,7 +133,7 @@ response example:
 ### POST /api/v1/balance/deposit
 **Transfer money from logged-in user's wallet to bank account**  
 Auth: Bearer  
-request body:  
+request body example:  
 ```
 {
   "amount": int
@@ -161,7 +161,7 @@ response example:
 ### POST /api/v1/balance/transfer
 **Transfer money from logged-in user's bank account to another user's bank account**  
 Auth: Bearer  
-request body:  
+request body example: 
 ```
 {
   "amount": int
@@ -175,7 +175,7 @@ response example:
 ### POST /api/v1/balance/bablo
 **Button "Bablo"... What can it do?**  
 Auth: Bearer  
-request body:  
+request body example: 
 ```
 {
   "amount": int
