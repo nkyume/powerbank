@@ -67,7 +67,8 @@ query params:
         
   - **page**: int   
       page number  
-      default value: 50
+      default value: 50  
+    
 response example:  
 ```
 {
@@ -102,7 +103,8 @@ response example:
 
 ### GET /api/v1/balance/transaction  
 **Returns array of transactions of logged-in user**  
-Auth: Bearer  
+Auth: Bearer 
+
 query params:  
   - **search**: string    
       will return only users whose usernames start with that string
@@ -114,6 +116,7 @@ query params:
   - **page**: int   
       page number  
       default value: 50
+    
 response example:  
 ```
 {
