@@ -26,7 +26,7 @@ I'm too silly to make swagger docs (>؂ •́)
 
 ### Auth
 ### POST /api/v1/signup
-**create user account**
+**create user account**  
 request body example:
 ```
 {
@@ -148,7 +148,7 @@ response example:
 ### POST /api/v1/balance/withdraw
 **Transfer money from logged-in user's bank account to wallet**  
 Auth: Bearer  
-request body:  
+request body example:  
 ```
 {
   "amount": int
