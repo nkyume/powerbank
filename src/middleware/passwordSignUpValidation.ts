@@ -1,8 +1,7 @@
 import { body } from 'express-validator'
 
 export const passwordSignUpValidation = body('password')
-  .not()
-  .isEmpty()
+  .notEmpty()
   .withMessage('password is required')
   .isString()
   .withMessage('password must be a string')
