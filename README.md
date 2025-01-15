@@ -56,8 +56,8 @@ response example:
 ```
 ### Users
 ### GET /api/v1/users
-**Returns array of users**
-query params:  
+**Returns array of users**   
+query params:   
   - **search**: string    
       will return only users whose usernames start with that string
       
@@ -103,8 +103,8 @@ response example:
 
 ### GET /api/v1/balance/transaction  
 **Returns array of transactions of logged-in user**  
-Auth: Bearer 
-
+Auth: Bearer  
+   
 query params:  
   - **search**: string    
       will return only users whose usernames start with that string
