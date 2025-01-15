@@ -25,7 +25,7 @@ tags:
 I'm too silly to make swagger docs (>؂ •́)
 
 ### Auth
-### POST /api/v1/sighup
+### POST /api/v1/signup
 **create user account**
 request body example:
 ```
