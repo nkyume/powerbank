@@ -2,6 +2,6 @@ import { body } from 'express-validator'
 
 export const amountValidation = body('amount')
   .notEmpty()
-  .withMessage('amount should not be empty.')
+  .withMessage('amount is required.')
   .isNumeric()
-  .withMessage('amount should be a number.')
+  .withMessage('amount must be a number.')

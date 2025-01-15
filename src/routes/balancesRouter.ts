@@ -42,7 +42,7 @@ balancesRouter.post(
   '/deposit',
   amountValidation,
   inputValidationMiddleware,
-  async (req: Request, res: Response) => {
+  async (req: Request<{}, { amount: number }>, res: Response) => {
     const data = matchedData(req)
     const username = res.locals.userDetails.username
     const balance = await findBalance(username)
@@ -62,7 +62,7 @@ balancesRouter.post(
   '/withdraw',
   amountValidation,
   inputValidationMiddleware,
-  async (req: Request, res: Response) => {
+  async (req: Request<{}, { amount: number }>, res: Response) => {
     const data = matchedData(req)
     const username = res.locals.userDetails.username
     const balance = await findBalance(username)
@@ -84,7 +84,10 @@ balancesRouter.post(
   amountValidation,
   body('receiver').notEmpty().withMessage('receiver should not be empty.'),
   inputValidationMiddleware,
-  async (req: Request, res: Response) => {
+  async (
+    req: Request<{}, { receiver: string; amount: number }>,
+    res: Response
+  ) => {
     const data = matchedData(req)
     const foundReceiver = await findUser(data.receiver)
     const username = res.locals.userDetails.username
