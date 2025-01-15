@@ -57,6 +57,7 @@ response example:
 ### Users
 ### GET /api/v1/users
 **Returns array of users**   
+  
 query params:   
   - **search**: string    
       will return only users whose usernames start with that string
