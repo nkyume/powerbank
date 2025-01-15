@@ -91,7 +91,7 @@ response example:
 ```
 
 ## Balances :moneybag:
-### GET /api/v1/balance  :lock:
+### :lock: GET /api/v1/balance  
 **Returns balance of logged-in user**  
 Auth: Bearer  
 response example:  
@@ -102,7 +102,7 @@ response example:
 }
 ```
 
-### GET /api/v1/balance/transaction  :lock:
+### :lock: GET /api/v1/balance/transaction
 **Returns array of transactions of logged-in user**  
 Auth: Bearer  
    
@@ -131,7 +131,7 @@ response example:
 }
 ```
 
-### POST /api/v1/balance/deposit :lock:
+### :lock: POST /api/v1/balance/deposit 
 **Transfer money from logged-in user's wallet to bank account**  
 Auth: Bearer  
 request body example:  
@@ -145,7 +145,7 @@ response example:
 204
 ```
 
-### POST /api/v1/balance/withdraw :lock:
+### :lock: POST /api/v1/balance/withdraw 
 **Transfer money from logged-in user's bank account to wallet**  
 Auth: Bearer  
 request body example:  
@@ -159,7 +159,7 @@ response example:
 204
 ```
 
-### POST /api/v1/balance/transfer :lock:
+### :lock: POST /api/v1/balance/transfer 
 **Transfer money from logged-in user's bank account to another user's bank account**  
 Auth: Bearer  
 request body example: 
@@ -173,7 +173,7 @@ response example:
 204
 ```
 
-### POST /api/v1/balance/bablo :lock:
+### :lock: POST /api/v1/balance/bablo 
 **Button "Bablo"... If only i had it irl...**  
 Auth: Bearer  
 request body example: 
