@@ -58,7 +58,11 @@ export class Balances {
     }
   }
 
-  public async findTransactions(username: string): Promise<TransactionType[]> {
+  public async findTransactions(
+    username: string,
+    limit: number,
+    offset: number
+  ): Promise<TransactionType[]> {
     const client = await db.getClient()
     const findTransactionQuery = `
       SELECT
@@ -74,10 +78,15 @@ export class Balances {
       WHERE
         sender.username = $1 OR receiver.username = $1
       ORDER BY
-        t.created_at DESC;
+        t.created_at DESC
+      LIMIT $2 OFFSET $3;
     `
     try {
-      const res = await client.query(findTransactionQuery, [username])
+      const res = await client.query(findTransactionQuery, [
+        username,
+        limit,
+        offset,
+      ])
       return res.rows.map((transaction): TransactionType => {
         return {
           senderUsername: transaction.sender_username,

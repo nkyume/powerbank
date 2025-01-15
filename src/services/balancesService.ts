@@ -13,9 +13,11 @@ export async function findBalance(username: string): Promise<balanceViewModel> {
 }
 
 export async function findTransacitons(
-  username: string
+  username: string,
+  limit: number,
+  offset: number
 ): Promise<transactionViewModel[]> {
-  const res = await balances.findTransactions(username)
+  const res = await balances.findTransactions(username, limit, offset)
   return res.map((transaction): transactionViewModel => {
     return {
       senderUsername: transaction.senderUsername,

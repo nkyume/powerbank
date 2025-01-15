@@ -19,7 +19,7 @@ authRouter.post(
   usernameSignUpValidation,
   passwordSignUpValidation,
   inputValidationMiddleware,
-  async (req: Request<{}, userCreateModel>, res: Response) => {
+  async (req: Request<{}, {}, userCreateModel>, res: Response) => {
     const data = matchedData(req)
     const isUserExists = await findUser(data.username)
     if (isUserExists.username) {
@@ -38,7 +38,7 @@ authRouter.post(
   usernameLoginValidation,
   passwordLoginValidation,
   inputValidationMiddleware,
-  async (req: Request<{}, userLoginModel>, res: Response) => {
+  async (req: Request<{}, {}, userLoginModel>, res: Response) => {
     const data = matchedData(req)
     const token = await loginUser({
       username: data.username,
