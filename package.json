@@ -8,7 +8,7 @@
   "scripts": {
     "test": "jest dist/",
     "watch": "tsc -w",
-    "dev": "nodemon --inspect dist/index.js"
+    "dev": "nodemon dist/index.js"
   },
   "dependencies": {
     "@types/express-validator": "^3.0.2",
@@ -36,6 +36,6 @@
     "supertest": "^7.0.0",
     "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
-    "typescript": "^5.7.2"
+    "typescript": "^5.7.3"
   }
 }
