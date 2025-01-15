@@ -1,6 +1,6 @@
 import { PoolClient, QueryResultRow } from 'pg'
 
-import { getClient } from '.'
+import { db } from '.'
 
 export type BalanceType = {
   username: string
@@ -25,7 +25,7 @@ type addBalanceModel = {
 
 export class Balances {
   public async findByUsername(username: string): Promise<BalanceType> {
-    const client = await getClient()
+    const client = await db.getClient()
     try {
       const findBalanceQuery = `
         SELECT
@@ -59,7 +59,7 @@ export class Balances {
   }
 
   public async findTransactions(username: string): Promise<TransactionType[]> {
-    const client = await getClient()
+    const client = await db.getClient()
     const findTransactionQuery = `
       SELECT
         sender.username AS sender_username,
@@ -99,27 +99,26 @@ export class Balances {
   public async createTransaction(
     transaction: transactionCreateModel
   ): Promise<void> {
-    const client = await getClient()
-    const createTransactionStmt = `
-      INSERT INTO transactions (sender_id, receiver_id, amount, transaction_type)
-        VALUES (
-          (SELECT id FROM users WHERE username = $1), 
-          (SELECT id FROM users WHERE username = $2),
-          $3,
-          $4);
-    `
+    const client = await db.getClient()
     try {
-      await client.query('BEGIN')
-      await client.query(createTransactionStmt, [
-        transaction.sender,
-        transaction.receiver,
-        transaction.amount,
-        transaction.type,
-      ])
-      await this.resolveTransaction(transaction, client)
-      await client.query('COMMIT')
+      await db.withTransaction(client, async () => {
+        const createTransactionStmt = `
+          INSERT INTO transactions (sender_id, receiver_id, amount, transaction_type)
+            VALUES (
+              (SELECT id FROM users WHERE username = $1), 
+              (SELECT id FROM users WHERE username = $2),
+              $3,
+              $4);
+        `
+        await client.query(createTransactionStmt, [
+          transaction.sender,
+          transaction.receiver,
+          transaction.amount,
+          transaction.type,
+        ])
+        await this.resolveTransaction(transaction, client)
+      })
     } catch (err) {
-      await client.query('ROLLBACK')
       console.log(err)
       throw err
     } finally {

@@ -1,6 +1,6 @@
 import { DatabaseError, QueryResultRow } from 'pg'
 
-import { getClient } from './'
+import { db } from './'
 
 export type UserType = {
   id: number
@@ -17,28 +17,27 @@ export type userCreateDbModel = {
 
 export class Users {
   public async create(user: userCreateDbModel): Promise<boolean> {
-    const client = await getClient()
-    const createUser = `
-      INSERT INTO users (username, hashed_password)
-        VALUES ($1, $2)
-      RETURNING
-        id;
-    `
-    const createBalance = `
-      INSERT INTO balances (user_id)
-        VALUES ($1);
-    `
+    const client = await db.getClient()
     try {
-      client.query('BEGIN')
-      const res = await client.query(createUser, [
-        user.username,
-        user.hashed_password,
-      ])
-      await client.query(createBalance, [res.rows[0].id])
-      await client.query('COMMIT')
+      await db.withTransaction(client, async () => {
+        const createUser = `
+          INSERT INTO users (username, hashed_password)
+            VALUES ($1, $2)
+          RETURNING
+            id;
+        `
+        const res = await client.query(createUser, [
+          user.username,
+          user.hashed_password,
+        ])
+        const createBalance = `
+          INSERT INTO balances (user_id)
+            VALUES ($1);
+        `
+        await client.query(createBalance, [res.rows[0].id])
+      })
       return true
     } catch (err) {
-      await client.query('ROLLBACK')
       // if username already exists in database
       if (err instanceof DatabaseError && err.code === '23505') {
         return false
@@ -55,7 +54,7 @@ export class Users {
     limit: number,
     offset: number
   ): Promise<UserType[]> {
-    const client = await getClient()
+    const client = await db.getClient()
     const getUsers = `
       SELECT
         id,
@@ -84,7 +83,7 @@ export class Users {
   }
 
   public async findByUsername(username: string): Promise<UserType> {
-    const client = await getClient()
+    const client = await db.getClient()
     const getUser = `
       SELECT
         id,

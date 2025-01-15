@@ -1,4 +1,4 @@
-import pg from 'pg'
+import pg, { PoolClient } from 'pg'
 
 import { SETTINGS } from '../settings'
 
@@ -9,9 +9,21 @@ const pool = new Pool({
   idle_in_transaction_session_timeout: +SETTINGS.DB_IDLE_IN_TRANSACTION_TIMEOUT,
 })
 
-export const dbDisconnect = async () => {
-  await pool.end()
-}
-export const getClient = () => {
-  return pool.connect()
+export const db = {
+  withTransaction: async (client: PoolClient, callback: Function) => {
+    try {
+      client.query('BEGIN')
+      callback()
+      client.query('COMMIT')
+    } catch (err) {
+      client.query('ROLLBACK')
+      throw err
+    }
+  },
+  disconnect: async () => {
+    await pool.end()
+  },
+  getClient: () => {
+    return pool.connect()
+  },
 }
