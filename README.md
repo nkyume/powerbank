@@ -1,5 +1,5 @@
 # Power Bank
-Advanced Banking Super Operating System
+Advanced Banking Secure Operating System
   
 # How to run:
 
