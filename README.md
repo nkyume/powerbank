@@ -6,7 +6,7 @@ Advanced Banking Super Operating System
 1. Make sure you have [postgressql](https://www.postgresql.org/download)  
 2. Start postgres
 3. Configure .env file  
-4. Install dependences 
+4. Install dependencies
 ```
 yarn 
 ```
