@@ -13,7 +13,7 @@ export const db = {
   withTransaction: async (client: PoolClient, callback: Function) => {
     try {
       client.query('BEGIN')
-      callback()
+      await callback()
       client.query('COMMIT')
     } catch (err) {
       client.query('ROLLBACK')

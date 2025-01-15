@@ -125,6 +125,7 @@ export class Balances {
       client.release()
     }
   }
+
   private async resolveTransaction(
     transaction: transactionCreateModel,
     client: PoolClient
