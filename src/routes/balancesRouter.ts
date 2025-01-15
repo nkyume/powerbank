@@ -31,9 +31,15 @@ balancesRouter.get(
 
 balancesRouter.get(
   '/transactions',
-  async (req: Request, res: Response<transactionViewModel[]>) => {
+  async (
+    req: Request<{}, {}, {}, { limit: number; page: number }>,
+    res: Response<transactionViewModel[]>
+  ) => {
+    const limit = +req.query.limit || 50
+    const page = +req.query.page || 1
+    const skip = limit * (page - 1)
     const username = res.locals.userDetails.username
-    const transactions = await findTransacitons(username)
+    const transactions = await findTransacitons(username, limit, skip)
     res.json(transactions)
   }
 )
@@ -42,7 +48,7 @@ balancesRouter.post(
   '/deposit',
   amountValidation,
   inputValidationMiddleware,
-  async (req: Request<{}, { amount: number }>, res: Response) => {
+  async (req: Request<{}, {}, { amount: number }>, res: Response) => {
     const data = matchedData(req)
     const username = res.locals.userDetails.username
     const balance = await findBalance(username)
@@ -62,7 +68,7 @@ balancesRouter.post(
   '/withdraw',
   amountValidation,
   inputValidationMiddleware,
-  async (req: Request<{}, { amount: number }>, res: Response) => {
+  async (req: Request<{}, {}, { amount: number }>, res: Response) => {
     const data = matchedData(req)
     const username = res.locals.userDetails.username
     const balance = await findBalance(username)
