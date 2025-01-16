@@ -64,10 +64,13 @@ optional query params:
       
   - **limit**: int  
       how many users per page   
-      default value: 50
+      default value: 50  
+      min: 0  
+      max: 100  
         
   - **page**: int   
-      default value: 1 
+      default value: 1  
+      min: 1   
     
 response example:  
 ```
@@ -108,10 +111,13 @@ Auth: Bearer
 optional query params:   
   - **limit**: int  
       how many transactions per page  
-      default value: 50
+      default value: 50  
+      min: 0  
+      max: 100  
         
-  - **page**: int    
-      default value: 1
+  - **page**: int      
+      default value: 1  
+      min: 1  
     
 response example:  
 ```
