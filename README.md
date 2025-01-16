@@ -8,7 +8,7 @@ Advanced Banking Secure Operating System
 3. Configure .env file  
 4. Install dependencies
 ```
-yarn 
+yarn install
 ```
 5. Compile and run
 ```
