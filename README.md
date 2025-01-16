@@ -67,7 +67,6 @@ optional query params:
       default value: 50
         
   - **page**: int   
-      page number  
       default value: 1 
     
 response example:  
@@ -111,8 +110,7 @@ optional query params:
       how many transactions per page  
       default value: 50
         
-  - **page**: int   
-      page number  
+  - **page**: int    
       default value: 1
     
 response example:  
