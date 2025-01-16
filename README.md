@@ -166,7 +166,7 @@ Auth: Bearer
 request body example:  
 ```
 {
-  "reciever": "username"
+  "receiver": "username"
   "amount": int
 }
 ```
