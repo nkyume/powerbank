@@ -83,7 +83,7 @@ response example:
 }
 ```
 
-### GET /api/v1/user/{username}
+### GET /api/v1/users/{username}
 **Returns one user**  
 response example:  
 ```
@@ -104,7 +104,7 @@ response example:
 }
 ```
 
-### :lock: GET /api/v1/balance/transaction
+### :lock: GET /api/v1/balance/transactions
 **Returns array of transactions of logged-in user ordered by recent first**  
 Auth: Bearer  
    
@@ -163,12 +163,14 @@ response example:
 ### :lock: POST /api/v1/balance/transfer 
 **Transfer money from logged-in user's bank account to another user's bank account**  
 Auth: Bearer  
-request body example: 
+request body example:  
 ```
 {
+  "receiver": "username"
   "amount": int
 }
 ```
+reciever: 
 response example:  
 ```
 204
