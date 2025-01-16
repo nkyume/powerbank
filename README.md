@@ -18,13 +18,13 @@ yarn start
 
 # Endpoints
 Navigation:  
-- [Auth](#auth).  
-- [Users](#auth).
-- [Balance](#auth).
+- :policewoman: [Auth](#auth). 
+- :woman: [Users](#users).
+- :moneybag: [Balance](#balance).
    
 I'm too silly to make swagger docs (>؂ •́)
 
-### Auth :policewoman:
+### Auth 
 ### POST /api/v1/signup
 **create user account**  
 request body example:
@@ -54,7 +54,7 @@ response example:
   "token": 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6Im1hZG9rYSIsImlhdCI6MTUxNjIzOTAyMn0.JjCjhHC4sZBVpcFUUtT5PVHXQQtIv1AC-2J4Hb1kmjc'
 }
 ```
-### Users :woman:
+### Users
 ### GET /api/v1/users
 **Returns array of users**   
   
@@ -90,7 +90,7 @@ response example:
 }
 ```
 
-## Balances :moneybag:
+## Balance 
 ### :lock: GET /api/v1/balance  
 **Returns balance of logged-in user**  
 Auth: Bearer  
