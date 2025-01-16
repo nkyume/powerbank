@@ -22,7 +22,7 @@ Navigation:
 - :woman: [Users](#users).
 - :moneybag: [Balance](#balance).
    
-I'm too silly to make swagger docs (>؂ •́)
+I'm too silly to make swagger docs (>؂ •́)ᕗ⊹ ࣪ ˖
 
 ### Auth 
 ### POST /api/v1/signup
