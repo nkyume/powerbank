@@ -83,7 +83,7 @@ response example:
 }
 ```
 
-### GET /api/v1/user/{username}
+### GET /api/v1/users/{username}
 **Returns one user**  
 response example:  
 ```
