@@ -163,12 +163,14 @@ response example:
 ### :lock: POST /api/v1/balance/transfer 
 **Transfer money from logged-in user's bank account to another user's bank account**  
 Auth: Bearer  
-request body example: 
+request body example:  
 ```
 {
+  "reciever": "username"
   "amount": int
 }
 ```
+reciever: 
 response example:  
 ```
 204
