@@ -104,7 +104,7 @@ response example:
 }
 ```
 
-### :lock: GET /api/v1/balance/transaction
+### :lock: GET /api/v1/balance/transactions
 **Returns array of transactions of logged-in user ordered by recent first**  
 Auth: Bearer  
    
