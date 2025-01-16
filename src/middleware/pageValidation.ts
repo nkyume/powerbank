@@ -2,5 +2,5 @@ import { query } from 'express-validator'
 
 export const pageValidation = query('page')
   .optional()
-  .isInt()
+  .isInt({ min: 0 })
   .withMessage('page must be an integer')
