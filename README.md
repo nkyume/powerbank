@@ -56,7 +56,7 @@ response example:
 ```
 ### Users
 ### GET /api/v1/users
-**Returns array of users**   
+**Returns array of users ordered by username**   
   
 optional query params:   
   - **search**: string    
@@ -105,7 +105,7 @@ response example:
 ```
 
 ### :lock: GET /api/v1/balance/transaction
-**Returns array of transactions of logged-in user**  
+**Returns array of transactions of logged-in user ordered by recent first**  
 Auth: Bearer  
    
 optional query params:   
