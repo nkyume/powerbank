@@ -22,11 +22,11 @@ Navigation:
 - :woman: [Users](#users).
 - :moneybag: [Balance](#balance).
    
-I'm too silly to make swagger docs (>؂ •́)
+I'm too silly to make swagger docs (>؂ •́)ᕗ⊹ ࣪ ˖
 
 ### Auth 
 ### POST /api/v1/signup
-**create user account**  
+**Creates user account**  
 request body example:
 ```
 {
@@ -40,7 +40,7 @@ response example:
 ```
 
 ### POST /api/v1/login
-**log into account**  
+**Returns JWT**  
 request body example:
 ```
 {
@@ -56,19 +56,21 @@ response example:
 ```
 ### Users
 ### GET /api/v1/users
-**Returns array of users**   
+**Returns array of users ordered by username**   
   
-query params:   
+optional query params:   
   - **search**: string    
       will return only users whose usernames start with that string
       
   - **limit**: int  
-      how many users will return  
-      default value: 50
+      how many users per page   
+      default value: 50  
+      min: 0  
+      max: 100  
         
   - **page**: int   
-      page number  
-      default value: 1 
+      default value: 1  
+      min: 1   
     
 response example:  
 ```
@@ -103,20 +105,19 @@ response example:
 ```
 
 ### :lock: GET /api/v1/balance/transaction
-**Returns array of transactions of logged-in user**  
+**Returns array of transactions of logged-in user ordered by recent first**  
 Auth: Bearer  
    
-query params:  
-  - **search**: string    
-      will return only users whose usernames start with that string
-      
+optional query params:   
   - **limit**: int  
-      how many users will return  
-      default value: 50
+      how many transactions per page  
+      default value: 50  
+      min: 0  
+      max: 100  
         
-  - **page**: int   
-      page number  
-      default value: 1
+  - **page**: int      
+      default value: 1  
+      min: 1  
     
 response example:  
 ```
