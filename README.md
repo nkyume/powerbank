@@ -26,7 +26,7 @@ I'm too silly to make swagger docs (>؂ •́)ᕗ⊹ ࣪ ˖
 
 ### Auth 
 ### POST /api/v1/signup
-**create user account**  
+**Creates user account**  
 request body example:
 ```
 {
@@ -40,7 +40,7 @@ response example:
 ```
 
 ### POST /api/v1/login
-**log into account**  
+**Returns JWT**  
 request body example:
 ```
 {
