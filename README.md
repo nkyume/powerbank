@@ -63,7 +63,7 @@ query params:
       will return only users whose usernames start with that string
       
   - **limit**: int  
-      how many users will return  
+      how many users per page 
       default value: 50
         
   - **page**: int   
@@ -111,7 +111,7 @@ query params:
       will return only users whose usernames start with that string
       
   - **limit**: int  
-      how many users will return  
+      how many transactions per page 
       default value: 50
         
   - **page**: int   
