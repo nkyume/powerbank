@@ -106,10 +106,7 @@ response example:
 **Returns array of transactions of logged-in user**  
 Auth: Bearer  
    
-optional query params:  
-  - **search**: string    
-      will return only users whose usernames start with that string
-      
+optional query params:   
   - **limit**: int  
       how many transactions per page  
       default value: 50
